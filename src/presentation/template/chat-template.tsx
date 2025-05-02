@@ -1,12 +1,12 @@
 import { useState, useRef, useEffect } from 'react';
-import { GptMessages, MyMessage, TextMessageBox, TextMessageBoxFile, TextMessageBoxSelect, TypingLoader } from '../../components';
+import { GptMessages, MyMessage, TypingLoader, TextMessageBox } from '../components';
 
 interface Message {
   text: string;
   isGpt: boolean;
 }
 
-export const OrthographyPage = () => {
+export const ChatTemplate = () => {
   const [isLoading, setIsLoading] = useState(false);
   const [messages, setMessages] = useState<Message[]>([]);
   const messagesEndRef = useRef<HTMLDivElement>(null);
@@ -23,12 +23,12 @@ export const OrthographyPage = () => {
   const handlePost = async (text: string) => {
     setIsLoading(true);
     setMessages((prev) => [...prev, { text: text, isGpt: false }]);
-
+    
     // Simulación de respuesta del asistente
     setTimeout(() => {
-      setMessages((prev) => [...prev, {
-        text: 'Este es un ejemplo de respuesta del asistente. Aquí irían las correcciones ortográficas.',
-        isGpt: true
+      setMessages((prev) => [...prev, { 
+        text: 'Este es un ejemplo de respuesta del asistente. Aquí irían las correcciones ortográficas.', 
+        isGpt: true 
       }]);
       setIsLoading(false);
     }, 2000);
@@ -73,20 +73,6 @@ export const OrthographyPage = () => {
             placeholder='Escribe acá lo que deseas'
             disableCorrections
           />
-
-          {/* <TextMessageBoxFile
-            onSendMessage={handlePost}
-            placeholder='Escribe acá lo que deseas'
-          /> */}
-
-          {/* <TextMessageBoxSelect
-            onSendMessage={console.log}
-            options={[
-              { id: 'es', text: 'Español' },
-              { id: 'en', text: 'English' }
-            ]}
-            placeholder="Escribe tu mensaje..."
-          /> */}
         </div>
       </div>
     </div>
