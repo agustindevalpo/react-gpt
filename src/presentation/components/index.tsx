@@ -5,6 +5,7 @@ export * from './dashboard/Sidebar';
 
 export * from './chat-bubles/GptMessage';
 export * from './chat-bubles/MyMessage';
+export * from './chat-bubles/GptOrthographyMessage';
 
 export * from './loaders/TypingLoader';
 
