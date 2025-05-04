@@ -14,6 +14,7 @@ interface Message {
 }
 
 export const OrthographyPage = () => {
+  
   const [isLoading, setIsLoading] = useState(false);
   const [messages, setMessages] = useState<Message[]>([]);
   const messagesEndRef = useRef<HTMLDivElement>(null);

@@ -43,7 +43,12 @@ html, body {
 }
 
 .prose-invert a {
-  color: #60a5fa;
+  color: #34d399;
+  text-decoration: underline;
+}
+
+.prose-invert a:hover {
+  color: #10b981;
 }
 
 .prose-invert code {
