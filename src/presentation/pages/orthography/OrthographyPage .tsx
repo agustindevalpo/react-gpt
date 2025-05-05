@@ -2,7 +2,6 @@ import { useState, useRef, useEffect } from 'react';
 import {  ErrorItem, GptMessages, GptOrthographyMessages, MyMessage, OrthographyError, TextMessageBox, TypingLoader } from '../../components';
 import { orthographyUseCase } from '../../../core/use-cases';
 
-
 interface Message {
   text: string;
   isGpt: boolean;
